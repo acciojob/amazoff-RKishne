@@ -1,5 +1,7 @@
 package com.driver;
 
+import io.swagger.models.auth.In;
+
 public class Order {
 
     private String id;
@@ -11,7 +13,9 @@ public class Order {
         //deliveryTime  = HH*60 + MM
         this.id=id;
         String[] time=deliveryTime.split(":");
-        this.deliveryTime=((Integer.parseInt(time[0]))*60) + (Integer.parseInt(time[1]));;
+        String HH=String.valueOf(Integer.parseInt(time[0])/60);
+        String MM=String.valueOf(Integer.parseInt(time[1])%60);
+        this.deliveryTime=(Integer.parseInt(HH))*60 + Integer.parseInt(MM);;
     }
 
     public String getId() {
