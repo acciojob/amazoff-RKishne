@@ -47,7 +47,7 @@ public class OrderService {
     }
     public Integer getOrdersLeftAfterGivenTimeByPartnerId(String deliverytime, String partnerId) {
         String[] time = deliverytime.split(":");
-        int newTime= Integer.parseInt(time[0])*60 + Integer.parseInt(time[1]);
+        int newTime= ((Integer.parseInt(time[0]))*60) + (Integer.parseInt(time[1]));
 
         return orderRepository.getOrdersLeftAfterGivenTimeByPartnerId(newTime,partnerId);
     }
