@@ -83,9 +83,9 @@ public class OrderRepository {
     public int getLastDeliveryTimeByPartnerId(String partnerId) {
         int maxTime=0;
         List<String> orders=partnerOrdersDB.get(partnerId);
-        for(String orderID:orders){
+        for(String orderID: orders){
             int deliveryTime=ordersDB.get(orderID).getDeliveryTime();
-            maxTime=Math.max(maxTime,deliveryTime);
+            maxTime = Math.max(maxTime,deliveryTime);
         }
         return maxTime;
     }

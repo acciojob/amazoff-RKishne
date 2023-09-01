@@ -46,8 +46,8 @@ public class OrderService {
         return orderRepository.getCountOfUnassignedOrders();
     }
     public Integer getOrdersLeftAfterGivenTimeByPartnerId(String deliverytime, String partnerId) {
-        String time[]=deliverytime.split(":");
-        int newTime=Integer.parseInt(time[0])*60 + Integer.parseInt(time[1]);
+        String[] time = deliverytime.split(":");
+        int newTime= Integer.parseInt(time[0])*60 + Integer.parseInt(time[1]);
 
         return orderRepository.getOrdersLeftAfterGivenTimeByPartnerId(newTime,partnerId);
     }
@@ -57,10 +57,10 @@ public class OrderService {
         String MM=String.valueOf(time%60);
 
         if(HH.length()<2){
-            HH='0'+HH;
+            HH= '0' +HH;
         }
         if(MM.length()<2){
-            MM='0'+MM;
+            MM= '0' +MM;
         }
         return HH+':'+MM;
     }
