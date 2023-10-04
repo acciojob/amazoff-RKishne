@@ -62,7 +62,8 @@ public class OrderService {
         if(MM.length()<2){
             MM= '0' +MM;
         }
-        return HH+':'+MM;
+        String s = HH + ':' + MM;
+        return s;
     }
     public void deletePartnerById(String partnerId) {
         orderRepository.deletePartnerById(partnerId);
